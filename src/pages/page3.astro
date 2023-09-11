@@ -1,17 +1,26 @@
 ---
 import Layout from "../layouts/LayoutWhite.astro";
 import Todo from "../components/ReactComp/Todo";
+import Navigation from "../components/Navigation.astro";
+
+const opsys = "linux";
+const rd = Math.random() > 0.5;
 ---
 
-<Layout title="网站标题">
+<Layout title="page3">
   <main>
     <h1>page3</h1>
+    <Navigation />
     <div class="container">
       <p>a little different</p>
       <p>client visible：最低优先级</p>
       <p>
         <a href="/">home</a>
       </p>
+      <p>
+        操作系统： {opsys}
+      </p>
+       rd: {rd ? "true" : "false"}
     </div>
 
     <hr />
