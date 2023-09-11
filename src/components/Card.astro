@@ -6,11 +6,6 @@ interface Props {
 }
 
 const { href, title, body } = Astro.props;
-process(title, href);
-
-function process(a: string, b: string) {
-  console.log(a + b);
-}
 ---
 
 <li class="link-card">
