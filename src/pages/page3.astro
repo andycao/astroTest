@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/LayoutWhite.astro";
+import Todo from "../components/ReactComp/Todo";
+---
+
+<Layout title="网站标题">
+  <main>
+    <h1>page3</h1>
+    <div class="container">
+      <p>a little different</p>
+      <p>client visible：最低优先级</p>
+      <p>
+        <a href="/">home</a>
+      </p>
+    </div>
+
+    <hr />
+    <Todo client:visible />
+  </main>
+</Layout>
