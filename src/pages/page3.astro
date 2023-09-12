@@ -3,6 +3,7 @@ import Layout from "../layouts/LayoutWhite.astro";
 import Todo from "../components/ReactComp/Todo";
 import Navigation from "../components/Navigation.astro";
 import User from "@/components/User.astro";
+import Film from "@/components/Film.astro";
 
 const opsys = "linux";
 const rd = Math.random() > 0.5;
@@ -24,6 +25,8 @@ const rd = Math.random() > 0.5;
        rd: {rd ? "true" : "false"}
     </div>
     <User />
+    <hr />
+    <Film />
     <hr />
     <Todo client:visible />
   </main>
