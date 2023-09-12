@@ -1,0 +1,17 @@
+---
+import Location from './Location.astro';
+
+const response = await fetch('https://randomuser.me/api/');
+const data = await response.json();
+const randomUser = data.results[0]
+console.log(randomUser);
+
+---
+
+<!-- 获取的数据可以在构建时在 HTML 中渲染 -->
+<h1>User</h1>
+<h2>{randomUser.name.first} {randomUser.name.last}</h2>
+<p>email: {randomUser.email}</p>
+<p>gender: {randomUser.email}</p>
+<!-- 获取的数据可以在构建时传递给组件作为参数 -->
+<Location city={randomUser.location.city} />

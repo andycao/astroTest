@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import { useStore } from "@nanostores/react";
+import { list } from "../../nanoStore";
 
 const Index = () => {
-  const [todos, setTodos] = useState([]);
   const [form] = Form.useForm();
 
+  const $nanoList = useStore(list);
+  console.log($nanoList);
+
   function remove(index) {
-    setTodos((todos) => todos.filter((e, i) => i !== index));
+    list.set($nanoList.filter((e, i) => i !== index));
   }
   return (
     <div className="container">
@@ -15,7 +19,7 @@ const Index = () => {
       <Form
         form={form}
         onFinish={(values) => {
-          setTodos((todos) => [...todos, values.name]);
+          list.set([...$nanoList, values.name]);
           form.resetFields();
         }}
       >
@@ -33,8 +37,8 @@ const Index = () => {
         <Button htmlType="submit">add</Button>
       </Form>
       <ul>
-        {Array.isArray(todos) && todos.length > 0
-          ? todos.map((e, i) => (
+        {Array.isArray($nanoList) && $nanoList.length > 0
+          ? $nanoList.map((e, i) => (
               <li key={uuidv4()}>
                 {e}{" "}
                 <Button

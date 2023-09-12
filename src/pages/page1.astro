@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/LayoutWhite.astro";
-import Todo from "../components/ReactComp/Todo";
-import Navigation from "../components/Navigation.astro";
+import Layout from "@/layouts/LayoutWhite.astro";
+import Todo from "@/components/ReactComp/Todo";
+import Navigation from "@/components/Navigation.astro";
 ---
 
 <Layout title="page1">
@@ -13,6 +13,7 @@ import Navigation from "../components/Navigation.astro";
       <a href="/">home</a>
     </div>
 
+    <Todo client:only="react" />
     <hr />
     <Todo client:only="react" />
   </main>

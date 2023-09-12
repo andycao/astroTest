@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
+    "@nanostores/react": "^0.7.1",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "antd": "^5.9.0",
     "astro": "^3.0.10",
+    "nanostores": "^0.9.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "uuid": "^9.0.0"
